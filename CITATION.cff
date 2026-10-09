@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If GeoNodes IR is useful in research software, please cite the repository."
+title: "GeoNodes IR"
+type: software
+authors:
+  - name: "EnterUniverse"
+version: 0.1.0
+date-released: 2026-10-09
+url: "https://github.com/EnterUniverse/geonodes-ir"
+repository-code: "https://github.com/EnterUniverse/geonodes-ir"
+license: Apache-2.0

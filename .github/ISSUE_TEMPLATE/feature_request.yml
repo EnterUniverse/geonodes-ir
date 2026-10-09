@@ -1,0 +1,26 @@
+name: Operator or feature request
+description: Propose a focused addition to the IR or backend
+title: "[Proposal]: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Conversion problem
+      description: Describe the representation gap, not only the requested API.
+    validations:
+      required: true
+  - type: textarea
+    id: semantics
+    attributes:
+      label: Proposed semantics
+      description: Include types, Blender mapping, version, and determinism constraints.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Verification approach
+      description: How can a conversion be checked against its source?
+    validations:
+      required: true

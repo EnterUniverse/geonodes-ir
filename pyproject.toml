@@ -1,0 +1,78 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "geonodes-ir"
+dynamic = ["version"]
+description = "A typed, validated intermediate representation for Blender Geometry Nodes"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [{ name = "EnterUniverse" }]
+keywords = ["blender", "geometry-nodes", "intermediate-representation", "procedural-geometry"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Multimedia :: Graphics :: 3D Modeling",
+  "Typing :: Typed",
+]
+
+[project.optional-dependencies]
+dev = [
+  "build>=1.2",
+  "pytest>=8.3",
+  "ruff>=0.11",
+  "twine>=6.1",
+]
+
+[project.scripts]
+geonodes-ir = "geonodes_ir.cli:main"
+
+[project.urls]
+Documentation = "https://github.com/EnterUniverse/geonodes-ir/tree/main/docs"
+Issues = "https://github.com/EnterUniverse/geonodes-ir/issues"
+Repository = "https://github.com/EnterUniverse/geonodes-ir"
+
+[tool.hatch.version]
+path = "src/geonodes_ir/__init__.py"
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "src/geonodes_ir",
+  "tests",
+  "examples",
+  "docs",
+  "README.md",
+  "README.zh-CN.md",
+  "LICENSE",
+  "CHANGELOG.md",
+  "CITATION.cff",
+  "CODE_OF_CONDUCT.md",
+  "CONTRIBUTING.md",
+  "SECURITY.md",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/geonodes_ir"]
+
+[tool.pytest.ini_options]
+addopts = "-ra --strict-markers"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+
+[tool.ruff.format]
+quote-style = "double"

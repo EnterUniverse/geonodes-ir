@@ -1,0 +1,41 @@
+name: Bug report
+description: Report a reproducible validation or Blender backend problem
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for providing a minimal, public reproduction.
+  - type: input
+    id: version
+    attributes:
+      label: GeoNodes IR version
+      placeholder: 0.1.0
+    validations:
+      required: true
+  - type: input
+    id: blender
+    attributes:
+      label: Blender version
+      description: Write “not applicable” for pure validation issues.
+      placeholder: 4.2.0
+    validations:
+      required: true
+  - type: textarea
+    id: graph
+    attributes:
+      label: Minimal graph
+      description: Attach or paste a graph without private dataset content.
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Observed and expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Error output
+      render: shell

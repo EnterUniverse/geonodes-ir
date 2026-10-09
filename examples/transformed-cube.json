@@ -1,0 +1,29 @@
+{
+  "schema": "geonodes-ir/v1",
+  "id": "transformed_cube",
+  "frame": "right_handed_z_up",
+  "nodes": [
+    {
+      "id": "cube",
+      "op": "primitive.box",
+      "inputs": {},
+      "outputs": {"Mesh": "geometry"},
+      "params": {"Size": [1.0, 1.0, 1.0]},
+      "role": "source"
+    },
+    {
+      "id": "transform",
+      "op": "modify.transform",
+      "inputs": {"Geometry": {"node": "cube", "port": "Mesh"}},
+      "outputs": {"Geometry": "geometry"},
+      "params": {
+        "Rotation": [0.0, 0.0, 0.35],
+        "Scale": [1.0, 0.6, 1.4],
+        "Translation": [0.0, 0.0, 0.7]
+      },
+      "role": "output"
+    }
+  ],
+  "outputs": [{"node": "transform", "port": "Geometry"}],
+  "metadata": {"description": "A small deterministic compiler example"}
+}
